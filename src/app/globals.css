@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  --grid-size: 30px;
+  --grid-strength: 1px;
+  --grid-dash: 5px;
+  --grid-gap: 10px;
+  --grid-color: #212121;
+  --paper-color: #101010;
+
+  background-color: var(--paper-color);
+  background-size: var(--grid-gap) var(--grid-gap),
+    var(--grid-size) var(--grid-size);
+  background-image: linear-gradient(
+      to bottom,
+      transparent var(--grid-dash),
+      var(--paper-color) var(--grid-dash)
+    ),
+    linear-gradient(
+      to right,
+      var(--grid-color) var(--grid-strength),
+      transparent var(--grid-strength)
+    ),
+    linear-gradient(
+      to right,
+      transparent var(--grid-dash),
+      var(--paper-color) var(--grid-dash)
+    ),
+    linear-gradient(
+      to bottom,
+      var(--grid-color) var(--grid-strength),
+      transparent var(--grid-strength)
+    );
+}
+
+#screen-gameboy-text {
+  position: absolute;
+  font-family: "Asap", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -2px;
+  text-align: center;
+  opacity: 1;
+  width: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) skew(-5deg);
+  overflow: hidden;
+  white-space: nowrap;
+  color: #fff;
+  background: -webkit-linear-gradient(
+    0deg,
+    #fff 0%,
+    #fff 40%,
+    #3232fc 40%,
+    #3232fc 44%,
+    #85e367 44%,
+    #85e367 48%,
+    #ff52e8 48%,
+    #ff52e8 52%,
+    #ff0151 52%,
+    #ff0151 56%,
+    #f9e52e 56%,
+    #f9e52e 60%,
+    #fff 60%,
+    #fff 100%
+  );
+  background-position: 130px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: screen-gameboy-text 3s infinite linear;
+  animation: screen-gameboy-text 3s infinite linear;
+}
+@keyframes screen-gameboy-text {
+  0%,
+  20% {
+    color: #f9e52e;
+    background-position: -120px;
+  }
+  20.01%,
+  40% {
+    color: #ff0151;
+  }
+  40.01%,
+  60% {
+    color: #ff52e8;
+  }
+  60.01%,
+  80% {
+    color: #85e367;
+  }
+  80.01%,
+  100% {
+    color: #3232fc;
+    background-position: 130px;
+  }
+}
