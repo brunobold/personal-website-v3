@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Chivo } from "next/font/google";
+import { Public_Sans } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import Navbar from "@/components/navbar";
 
-const chivo = Chivo({ subsets: ["latin"] });
+const publicSans = Public_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,8 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <SpeedInsights />
-      <body className={chivo.className}>
-        <Navbar />
+      <body className={publicSans.className}>
+        {/* <Navbar /> */}
         {children}
       </body>
     </html>
